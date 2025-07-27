@@ -1,6 +1,6 @@
 ===============================================================================
 
-Rails Presence has been successfully installed!
+Rails Presense has been successfully installed!
 
 To complete the installation:
 
@@ -8,7 +8,7 @@ To complete the installation:
    rake db:migrate
 
 2. Mount the engine in your routes.rb file:
-   mount RailsPresence::Engine => "/presence"
+   mount RailsPresense::Engine => "/presence"
 
 3. Include the routes in your application:
    # In your ApplicationController or specific controllers
@@ -18,7 +18,7 @@ To complete the installation:
 
    def update_user_presence
      return unless current_user
-     RailsPresence::PresenceRecord.touch_presence(current_user.id, 'web')
+     RailsPresense::PresenceRecord.touch_presence(current_user.id, 'web')
    end
 
 4. Set up ActionCable (if not already configured):
@@ -27,7 +27,7 @@ To complete the installation:
 
 5. Optional: Set up a background job to clean up stale records:
    # Add to your schedule.rb (whenever gem) or similar
-   RailsPresence::PresenceRecord.cleanup_stale_records
+   RailsPresense::PresenceRecord.cleanup_stale_records
 
 For more information, check the README.
 

@@ -1,4 +1,4 @@
-module RailsPresence
+module RailsPresense
   class PresenceChannel < ActionCable::Channel::Base
     def subscribed
       stream_from "presence_#{current_user.id}" if current_user

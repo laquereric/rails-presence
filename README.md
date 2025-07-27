@@ -1,4 +1,4 @@
-# Rails Presence
+# Rails Presense
 
 A Rails engine for managing user presence and online status in real-time. Track when users are active, online, or away in your Rails applications.
 
@@ -16,7 +16,7 @@ A Rails engine for managing user presence and online status in real-time. Track 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails_presence'
+gem 'rails_presense'
 ```
 
 And then execute:
@@ -25,19 +25,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rails_presence
+    $ gem install rails_presense
 
 Run the generator to install the required files:
 
-    $ rails generate rails_presence:install
+    $ rails generate rails_presense:install
     $ rake db:migrate
 
 ## Configuration
 
-Configure Rails Presence in `config/initializers/rails_presence.rb`:
+Configure Rails Presense in `config/initializers/rails_presense.rb`:
 
 ```ruby
-RailsPresence.configure do |config|
+RailsPresense.configure do |config|
   # How long to consider a user as "present" after their last activity
   config.default_timeout = 5.minutes
   
@@ -53,7 +53,7 @@ end
 Mount the engine in your `config/routes.rb`:
 
 ```ruby
-mount RailsPresence::Engine => "/presence"
+mount RailsPresense::Engine => "/presence"
 ```
 
 ### Tracking Presence
@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
   private
 
   def update_user_presence
-    RailsPresence::PresenceRecord.touch_presence(current_user.id, 'web')
+    RailsPresense::PresenceRecord.touch_presence(current_user.id, 'web')
   end
 end
 ```
@@ -98,7 +98,7 @@ Connect to the presence channel:
 
 ```javascript
 // app/assets/javascripts/channels/presence.js
-App.presence = App.cable.subscriptions.create("RailsPresence::PresenceChannel", {
+App.presence = App.cable.subscriptions.create("RailsPresense::PresenceChannel", {
   connected: function() {
     console.log("Connected to presence channel");
     this.perform('ping');
@@ -134,10 +134,10 @@ setInterval(function() {
 
 ```ruby
 # Check if user is active
-user_active = RailsPresence::PresenceRecord.active.for_user(user_id).any?
+user_active = RailsPresense::PresenceRecord.active.for_user(user_id).any?
 
 # Get all active presence records for a user
-records = RailsPresence::PresenceRecord.active.for_user(user_id)
+records = RailsPresense::PresenceRecord.active.for_user(user_id)
 ```
 
 #### Via API
@@ -160,14 +160,14 @@ Set up a background job to clean up stale records:
 
 ```ruby
 # In a scheduled job (using whenever, sidekiq-cron, etc.)
-RailsPresence::PresenceRecord.cleanup_stale_records
+RailsPresense::PresenceRecord.cleanup_stale_records
 ```
 
 ## API Reference
 
 ### Models
 
-#### `RailsPresence::PresenceRecord`
+#### `RailsPresense::PresenceRecord`
 
 - `touch_presence(user_id, identifier, metadata = {})` - Update presence for a user
 - `cleanup_stale_records` - Remove stale presence records
@@ -176,7 +176,7 @@ RailsPresence::PresenceRecord.cleanup_stale_records
 
 ### Controllers
 
-#### `RailsPresence::PresenceController`
+#### `RailsPresense::PresenceController`
 
 - `POST /presence/update` - Update user presence
 - `GET /presence/show` - Get presence for a user
@@ -184,7 +184,7 @@ RailsPresence::PresenceRecord.cleanup_stale_records
 
 ### Channels
 
-#### `RailsPresence::PresenceChannel`
+#### `RailsPresense::PresenceChannel`
 
 - `update_presence(data)` - Update presence via WebSocket
 - `ping` - Send a ping to maintain connection
@@ -195,7 +195,7 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ericlaquer/rails_presence. This project is intended to be a safe, welcoming space for collaboration.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ericlaquer/rails_presense. This project is intended to be a safe, welcoming space for collaboration.
 
 ## License
 

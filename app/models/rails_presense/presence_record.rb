@@ -1,11 +1,11 @@
-module RailsPresence
+module RailsPresense
   class PresenceRecord < ActiveRecord::Base
-    self.table_name = 'rails_presence_records'
+    self.table_name = 'rails_presense_records'
 
     validates :user_id, presence: true
     validates :identifier, presence: true, uniqueness: { scope: :user_id }
 
-    scope :active, -> { where('last_seen_at > ?', RailsPresence.default_timeout.ago) }
+    scope :active, -> { where('last_seen_at > ?', RailsPresense.default_timeout.ago) }
     scope :for_user, ->(user_id) { where(user_id: user_id) }
 
     def self.touch_presence(user_id, identifier, metadata = {})
@@ -17,11 +17,11 @@ module RailsPresence
     end
 
     def self.cleanup_stale_records
-      where('last_seen_at < ?', RailsPresence.default_timeout.ago).delete_all
+      where('last_seen_at < ?', RailsPresense.default_timeout.ago).delete_all
     end
 
     def active?
-      last_seen_at && last_seen_at > RailsPresence.default_timeout.ago
+      last_seen_at && last_seen_at > RailsPresense.default_timeout.ago
     end
 
     def time_since_last_seen

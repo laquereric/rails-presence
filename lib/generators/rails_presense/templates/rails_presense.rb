@@ -1,4 +1,4 @@
-RailsPresence.configure do |config|
+RailsPresense.configure do |config|
   # How long to consider a user as "present" after their last activity
   # config.default_timeout = 5.minutes
   

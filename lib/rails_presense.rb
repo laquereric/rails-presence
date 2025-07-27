@@ -1,7 +1,7 @@
-require "rails_presence/version"
-require "rails_presence/engine"
+require "rails_presense/version"
+require "rails_presense/engine"
 
-module RailsPresence
+module RailsPresense
   # Configuration
   mattr_accessor :default_timeout
   @@default_timeout = 5.minutes

@@ -1,4 +1,4 @@
-module RailsPresence
+module RailsPresense
   class PresenceController < ApplicationController
     before_action :authenticate_user!
 
