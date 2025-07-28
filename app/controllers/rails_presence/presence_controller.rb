@@ -1,6 +1,7 @@
 module RailsPresence
   class PresenceController < ApplicationController
-    before_action :authenticate_user!
+    # TODO Remove HACK
+    #before_action :authenticate_user!
 
     def update
       identifier = params[:identifier] || 'default'
@@ -38,6 +39,8 @@ module RailsPresence
     end
 
     def index
+      p "at RailsPresence::PresenceController#index"
+  
       user_ids = params[:user_ids] || []
       presence_data = {}
 

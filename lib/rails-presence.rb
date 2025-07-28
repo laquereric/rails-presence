@@ -1,5 +1,4 @@
-require "rails_presence/version"
-require "rails_presence/engine"
+require "rails-presence/version"
 
 module RailsPresence
   # Configuration
@@ -13,3 +12,6 @@ module RailsPresence
     yield self
   end
 end
+
+# Load the engine after the module is defined
+require "rails-presence/engine"
