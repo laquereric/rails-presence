@@ -1,4 +1,4 @@
-class CreateRailsPresenceRecords < ActiveRecord::Migration[5.0]
+class CreateRailsPresenceRecords < ActiveRecord::Migration<%= migration_version %>
   def change
     create_table :rails_presence_records do |t|
       t.integer :user_id, null: false

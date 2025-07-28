@@ -1,4 +1,4 @@
-RailsPresense::Engine.routes.draw do
+RailsPresence::Engine.routes.draw do
   resources :presence, only: [:show, :index] do
     collection do
       post :update

@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rails_presense/version'
+require 'rails_presence/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rails_presense"
-  spec.version       = RailsPresense::VERSION
+  spec.name          = "rails_presence"
+  spec.version       = RailsPresence::VERSION
   spec.authors       = ["Eric Laquer"]
   spec.email         = ["laquereric@gmail.com"]
 
   spec.summary       = %q{A Rails engine for managing user presence and online status.}
-  spec.description   = %q{Rails Presense provides real-time user presence tracking, online status management, and activity monitoring for Rails applications.}
-  spec.homepage      = "https://github.com/ericlaquer/rails_presense"
+  spec.description   = %q{Rails Presence provides real-time user presence tracking, online status management, and activity monitoring for Rails applications.}
+  spec.homepage      = "https://github.com/ericlaquer/rails_presence"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
