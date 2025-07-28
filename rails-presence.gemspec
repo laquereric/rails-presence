@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rails_presence/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rails_presence"
+  spec.name          = "rails-presence"
   spec.version       = RailsPresence::VERSION
   spec.authors       = ["Eric Laquer"]
   spec.email         = ["laquereric@gmail.com"]
